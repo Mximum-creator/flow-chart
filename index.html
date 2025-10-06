@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flowchart Fixed</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+
+<body>
+
+    <div class="mermaid">
+        flowchart TD
+        A[Start: User lands on Listing Page] --> B{User wants to search for Business, Category, or Location?}
+        B -- Yes --> C[User enters query in Search Button]
+        C --> D[Redirect to Search Page]
+        D --> E{Does query match an existing Listing Page?}
+        E -- Yes --> F[Display Search Page: Matched Listing Page card at the top <br> Below: Cards for nearby locations
+        or related categories]
+        E -- No --> G[Use APIs to generate a new Listing Page with existing UI]
+        F --> H{User clicks on a Listing Card?}
+        G --> H
+        H -- Yes --> I[Redirect to corresponding Listing Page]
+        H -- No --> J[Stay on Search Page or end]
+        I --> K[View listings on Listing Page]
+        B -- No --> K
+        K --> L[End]
+        J --> L
+    </div>
+
+</body>
+
+</html>

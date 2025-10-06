@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ThreeBestRated Flowcharts</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+
+<body>
+
+    <h2>Flowchart 2: Chatbot Functionality</h2>
+    <div class="mermaid">
+        flowchart TD
+        A[Start: User lands on Listing Page] --> B{User wants to use chatbot?}
+        B -- Yes --> C[User enters query in chatbot]
+        C --> D[Conversation on correcting query]
+        D --> E{Does query match an existing Listing Page?}
+        E -- Yes --> F[Chatbot shares matched Listing Page links and nearby categories]
+        E -- No --> G[Use APIs to generate a new Listing Page and share link]
+        F --> H{User clicks on a Listing Card?}
+        G --> H
+        H -- Yes --> I[Redirect to corresponding Listing Page]
+        I --> K[View listings on Listing Page]
+        K --> L[End]
+        J --> L
+    </div>
+
+</body>
+
+</html>
